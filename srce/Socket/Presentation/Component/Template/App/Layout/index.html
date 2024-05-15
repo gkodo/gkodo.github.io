@@ -1,0 +1,33 @@
+<div class="app-layout-container">
+	<div class="app-layout">
+		<div class="app-layout__header-container">
+			<header class="app-layout__header">
+				<slot name="header"></slot>
+			</header>
+		</div>
+		<div class="app-layout__body-container">
+			<div class="app-layout__body">
+				<div class="app-layout__navbar-container">
+					<nav class="app-layout__navbar">
+						<slot name="navbar"></slot>
+					</nav>
+				</div>
+				<div class="app-layout__content-container">
+					<main class="app-layout__content">
+						<slot name="content"></slot>
+					</main>
+				</div>
+				<div class="app-layout__sidebar-container">
+					<aside class="app-layout__sidebar">
+						<slot name="sidebar"></slot>
+					</aside>
+				</div>
+			</div>
+		</div>
+		<div class="app-layout__footer-container">
+			<footer class="app-layout__footer">
+				<slot name="footer"></slot>
+			</footer>
+		</div>
+	</div>
+</div>

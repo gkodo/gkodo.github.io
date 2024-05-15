@@ -1,0 +1,113 @@
+name: GitHub Pages Workflow
+
+on:
+  push:
+    branches:
+      - RLS/Main
+
+permissions:
+  id-token: write
+  contents: write
+  pages: write
+
+env:
+  NODE_VERSION: 20.13.1
+  ENVIRONMENT: github-pages
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    outputs:
+      node_version: ${{ env.NODE_VERSION }}
+      environment: ${{ env.ENVIRONMENT }}
+      datetime: ${{ steps.set_variables.outputs.datetime }}
+      branch: ${{ steps.set_variables.outputs.branch }}
+
+    steps:
+      - name: Set Variables
+        id: set_variables
+        run: |
+          echo "branch=${{ github.ref_name }}" >> "$GITHUB_OUTPUT"
+          echo "datetime=$(date '+%Y.%m.%d.%H.%M.%S')" >> "$GITHUB_OUTPUT"
+
+  build:
+    needs: setup
+    runs-on: ubuntu-latest
+    environment: ${{ needs.setup.outputs.environment }}
+    env:
+      CI_ENVIRONMENT: github
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.setup.outputs.branch }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ needs.setup.outputs.node_version }}
+
+      - name: Get Yarn Cache Directory
+        id: yarn-cache
+        run: echo "dir=$(yarn cache dir)" >> "$GITHUB_OUTPUT"
+
+      - name: Cache Dependencies
+        uses: actions/cache@v4
+        with:
+          path: ${{ steps.yarn-cache.outputs.dir }}
+          key: "${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}"
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - name: Install Dependencies
+        run: yarn install
+
+      - name: Build
+        run: yarn build
+
+      - name: Compress Release Asset
+        run: zip -rj dist.zip dist
+
+      - name: Semantic Release
+        run: yarn release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: ${{ needs.setup.outputs.branch }}
+          DATETIME: ${{ needs.setup.outputs.datetime }}
+
+      - name: Upload Output Build Directory
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-assets
+          path: dist
+
+  deploy:
+    needs: [setup, build]
+    runs-on: ubuntu-latest
+    environment:
+      name: ${{ needs.setup.outputs.environment }}
+      url: ${{ steps.deployment.outputs.page_url }}
+    concurrency:
+      group: '${{ github.workflow }}-${{ github.ref }}'
+
+    steps:
+      - name: Download Output Build Directory
+        uses: actions/download-artifact@v4
+        with:
+          name: release-assets
+          path: dist
+
+      - name: Upload Build Artifact for Deployment to GitHub Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          name: github-pages
+          path: dist
+          retention-days: 1
+
+      - name: Deploy to Github Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          artifact_name: github-pages

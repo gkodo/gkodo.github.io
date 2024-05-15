@@ -1,0 +1,49 @@
+{
+	"compilerOptions": {
+		/* General */
+		"sourceMap": true,
+		"module": "ESNext",
+		"target": "ES2020",
+		"declaration": true,
+		"skipLibCheck": true,
+		"importHelpers": true,
+		"esModuleInterop": true,
+		"emitDecoratorMetadata": true,
+		"experimentalDecorators": true,
+		"useDefineForClassFields": false,
+		"allowSyntheticDefaultImports": true,
+		"forceConsistentCasingInFileNames": true,
+		"lib": ["ES2020", "DOM", "DOM.Iterable"],
+
+		/* Bundler mode */
+		"noEmit": true,
+		"isolatedModules": true,
+		"resolveJsonModule": true,
+		"moduleResolution": "bundler",
+		"allowImportingTsExtensions": true,
+
+		/* Linting */
+		"strict": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"noFallthroughCasesInSwitch": true,
+
+		/* Type checking */
+		"noImplicitAny": true,
+		"noImplicitThis": true,
+		"strictNullChecks": true,
+		"noImplicitReturns": true,
+		"noImplicitOverride": true,
+		"strictBindCallApply": true,
+		"strictFunctionTypes": true,
+		"useUnknownInCatchVariables": false,
+		"strictPropertyInitialization": true,
+		"typeRoots": ["node_modules/@types", "type"],
+
+		"outDir": "dist",
+		"paths": { "*": ["./*"] }
+	},
+
+	"include": ["**/*.d.ts", "**/*.ts", "type/global-types.d.ts"],
+	"exclude": ["node_modules", "dist"]
+}
