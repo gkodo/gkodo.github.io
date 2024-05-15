@@ -73,8 +73,6 @@ switch (ciEnvironment) {
 		console.log(`Unknown CI environment: ${ciEnvironment}`);
 }
 
-if (ciEnvironment != null && ciEnvironment.trim() !== '') {
-	releaseConfig.plugins.push(modifyReleaseNamePlugin);
-}
+releaseConfig.plugins.push(modifyReleaseNamePlugin);
 
 export default releaseConfig;
