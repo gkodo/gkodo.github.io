@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/gkodo/gkodo.github.io/compare/v1.0.0...v1.1.0) (2024-05-15)
+
+
+### Features
+
+* **auth:** add new authenticate method ([5ceb6bc](https://github.com/gkodo/gkodo.github.io/commit/5ceb6bc6ad07b3081985873309fdc0b5cde2907b))
+
 # 1.0.0 (2024-05-15)
 
 
