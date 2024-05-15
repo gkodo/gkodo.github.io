@@ -28,7 +28,7 @@ switch (ciEnvironment) {
 		releaseConfig.plugins.push([
 			'@semantic-release/github',
 			{
-				releaseTitle: '${process.env.BRANCH}/${process.env.DATETIME}',
+				releaseTitle: `${process.env.BRANCH}/${process.env.DATETIME}`,
 				assets: [
 					{ path: 'dist.zip', label: 'Build distributable' },
 					{ path: 'CHANGELOG.md', label: 'Changelog' },
@@ -41,7 +41,7 @@ switch (ciEnvironment) {
 		releaseConfig.plugins.push([
 			'@semantic-release/gitlab',
 			{
-				releaseTitle: '${process.env.BRANCH}/${process.env.DATETIME}',
+				releaseTitle: `Release: ${process.env.BRANCH}/${process.env.DATETIME}`,
 				assets: [
 					{ path: 'dist.zip', label: 'Build distributable' },
 					{ path: 'CHANGELOG.md', label: 'Changelog' },
