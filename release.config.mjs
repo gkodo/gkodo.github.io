@@ -30,9 +30,9 @@ switch (ciEnvironment) {
 			{
 				releaseTitle: '${process.env.BRANCH}/${process.env.DATETIME}',
 				assets: [
-					{path: 'dist.zip', label: 'Build distributable'},
-					{path: 'CHANGELOG.md', label: 'Changelog'},
-					{path: 'LICENSE.md', label: 'License'},
+					{ path: 'dist.zip', label: 'Build distributable' },
+					{ path: 'CHANGELOG.md', label: 'Changelog' },
+					{ path: 'LICENSE.md', label: 'License' },
 				],
 			},
 		]);
@@ -43,9 +43,9 @@ switch (ciEnvironment) {
 			{
 				releaseTitle: '${process.env.BRANCH}/${process.env.DATETIME}',
 				assets: [
-					{path: 'dist.zip', label: 'Build distributable'},
-					{path: 'CHANGELOG.md', label: 'Changelog'},
-					{path: 'LICENSE.md', label: 'License'},
+					{ path: 'dist.zip', label: 'Build distributable' },
+					{ path: 'CHANGELOG.md', label: 'Changelog' },
+					{ path: 'LICENSE.md', label: 'License' },
 				],
 			},
 		]);
