@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/gkodo/gkodo.github.io/compare/v1.1.1...v1.1.2) (2024-05-15)
+
+
+### Bug Fixes
+
+* fix a problem in modal logount ([b562834](https://github.com/gkodo/gkodo.github.io/commit/b5628340b79dbcf6049d966a52898397c21cd342))
+
 ## [1.1.1](https://github.com/gkodo/gkodo.github.io/compare/v1.1.0...v1.1.1) (2024-05-15)
 
 ### Bug Fixes
