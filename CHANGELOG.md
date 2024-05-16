@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/gkodo/gkodo.github.io/compare/v1.1.2...v1.2.0) (2024-05-16)
+
+
+### Features
+
+* **picoro:** chicorita la micorita ([2f5b3bc](https://github.com/gkodo/gkodo.github.io/commit/2f5b3bc162b2e508cd996d53535a332faca1397b))
+
 ## [1.1.2](https://github.com/gkodo/gkodo.github.io/compare/v1.1.1...v1.1.2) (2024-05-15)
 
 
