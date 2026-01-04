@@ -1,41 +1,170 @@
-<!doctype html>
-<html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="theme-color" content="#212121" />
-		<meta name="revisit-after" content="1 days" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self';"> -->
-		<meta name="copyright" content="Copyright © 2024 John David Gómez Huertas" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0, shrink-to-fit=no" />
-		<meta name="description" content="Ingeniero de software autodidacta especializado en diseño y desarrollo de sistemas de software escalables y eficientes. Enfrento desafíos complejos con soluciones innovadoras que mitigan las limitaciones y restricciones existentes mediante el uso óptimo de los recursos disponibles." />
-		<meta name="keywords" content="John David Gómez Huertas, JDGomezH, GKodo, desarrollo backend, desarrollo frontend, fullstack, C#, Java, .Net, TypeScript, React, ingeniería de software, arquitectura de software, microservicios, Spring Boot, Quarkus, Docker, SQL Server, MariaDB, Oracle, PostgreSQL, liderazgo de equipos, gestión de proyectos, comunicación efectiva, resolución de problemas, adaptabilidad, innovación, análisis y toma de decisiones, negociación, transformación digital, mejora de procesos." />
-		<meta name="author" content="John David Gómez Huertas, JDGomezH, GKodo" />
-		<meta property="og:url" content="https://gkodo.com" />
-		<meta property="og:title" content="Ingeniero de software autodidacta" />
-		<meta property="og:description" content="Ingeniero de software autodidacta especializado en diseño y desarrollo de sistemas de software escalables y eficientes. Enfrento desafíos complejos con soluciones innovadoras que mitigan las limitaciones y restricciones existentes mediante el uso óptimo de los recursos disponibles." />
-		<meta property="og:image" content="https://gkodo.com/images/gkodo-brand-image.jpg" />
-		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:site" content="@tu_usuario_de_twitter" />
-		<meta name="twitter:title" content="John David Gómez Huertas – Ingeniero de Software Especializado en Sistemas Escalables y Eficientes" />
-		<meta name="twitter:description" content="Ingeniero de software autodidacta especializado en diseño y desarrollo de sistemas de software escalables y eficientes. Enfrento desafíos complejos con soluciones innovadoras que mitigan las limitaciones y restricciones existentes mediante el uso óptimo de los recursos disponibles." />
-		<meta name="twitter:image" content="https://gkodo.com/images/john-david-profile.jpg" />
-		<meta name="robots" content="index, follow" />
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GKodo | Technical Fiduciary Services</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 
-		<link rel="canonical" href="https://gkodo.com" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              // Brand Manual Palette
+              navy: {
+                900: '#0F172A', // Deep Navy (Primary BG)
+                800: '#1E293B', // Slate 800 (Secondary BG)
+                700: '#334155', // Elevated
+              },
+              oxford: '#002147', // Oxford Blue (Premium BG)
+              cyan: {
+                DEFAULT: '#06B6D4', // Electric Cyan (Tech/Links)
+                dim: 'rgba(6, 182, 212, 0.1)',
+              },
+              gold: {
+                DEFAULT: '#D97706', // Sovereign Gold (Value/ROI/Action)
+                dim: 'rgba(217, 119, 6, 0.1)',
+              },
+              antique: {
+                DEFAULT: '#C5A059', // Antique Gold (Exclusivity/Heritage/Borders)
+                dim: 'rgba(197, 160, 89, 0.1)',
+              },
+              success: '#16A34A', // Success Green
+              alert: '#DC2626', // Alert Crimson
+              slate: {
+                50: '#F8FAFC', // Text Primary
+                400: '#94A3B8', // Text Secondary
+                platinum: '#E5E4E2', // Platinum
+              }
+            },
+            fontFamily: {
+              sans: ['Inter', 'system-ui', 'sans-serif'],
+              serif: ['Playfair Display', 'Georgia', 'serif'],
+              mono: ['JetBrains Mono', 'monospace'],
+            },
+            backgroundImage: {
+              'grid-pattern': "linear-gradient(to right, #1E293B 1px, transparent 1px), linear-gradient(to bottom, #1E293B 1px, transparent 1px)",
+              'radial-fade': "radial-gradient(circle at center, transparent 0%, #0F172A 100%)",
+            },
+            boxShadow: {
+              'glow-cyan': '0 0 20px rgba(6, 182, 212, 0.15)',
+              'glow-gold': '0 0 20px rgba(217, 119, 6, 0.15)',
+              'glow-antique': '0 0 20px rgba(197, 160, 89, 0.15)',
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0F172A;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #334155;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #475569;
+      }
+      
+      .blueprint-grid {
+        background-size: 40px 40px;
+        mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+      }
 
-		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
-		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet" />
-		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
-		<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet" />
-		<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;600;700&display=swap" rel="stylesheet" />
-		<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet" />
+      /* --- PROFESSIONAL CV PRINT STYLES --- */
+      @media print {
+        @page {
+          margin: 1cm;
+          size: A4;
+        }
+        
+        * {
+          -webkit-print-color-adjust: exact !important;
+          print-color-adjust: exact !important;
+        }
 
-		<title>GKodo | Ingeniería de Software</title>
-		<script type="module" src="srce/Socket/Presentation/View/App"></script>
-	</head>
+        body { 
+          background-color: white !important; 
+          color: #111 !important; 
+        }
 
-	<body>
-		<gk-app></gk-app>
-	</body>
+        /* Hide Non-CV Elements */
+        nav, footer, button, .no-print, .blueprint-grid, .bg-radial-fade, .scroll-indicator { 
+          display: none !important; 
+        }
+
+        /* CV Container Reset */
+        .cv-container {
+          width: 100% !important;
+          max-width: 100% !important;
+          margin: 0 !important;
+          padding: 0 !important;
+          background: white !important;
+          border: none !important;
+          box-shadow: none !important;
+          color: black !important;
+        }
+
+        /* Typography & Color Overrides for Paper */
+        .text-slate-50, .text-slate-300, .text-slate-400, .text-slate-500 {
+          color: #333 !important;
+        }
+        
+        /* Darken Brand Colors for Print Contrast */
+        .text-antique { color: #8a6a28 !important; }
+        .text-gold { color: #a65a00 !important; }
+        .text-cyan { color: #005f7a !important; }
+
+        .bg-navy-900, .bg-navy-800, .bg-navy-700 {
+          background-color: white !important;
+        }
+
+        /* Borders */
+        .border-slate-700, .border-slate-800, .border-slate-600 {
+          border-color: #ddd !important;
+        }
+        
+        /* Ensure layout grids work */
+        .grid {
+          display: grid !important;
+        }
+
+        /* Avoid breaking elements inside sections */
+        section, .experience-item {
+          break-inside: avoid;
+        }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "recharts": "https://esm.sh/recharts@^3.6.0",
+    "vite": "https://esm.sh/vite@^7.3.0",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-navy-900 text-slate-50 antialiased selection:bg-antique selection:text-navy-900">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
 </html>
